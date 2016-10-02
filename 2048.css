@@ -10,12 +10,10 @@ header{
 
     text-align: center;
 }
-header h1{
-
-}
 header #newgame{
     width: 100px;
     height: 40px;
+    margin-right: 60px;
 
     color: #ffffff;
 
@@ -30,6 +28,7 @@ header #newgame:hover{
     background-color: #9f8b77;
 }
 header p{
+    display: inline-block;
     margin-top: 10px;
 }
 header #score{
@@ -58,7 +57,6 @@ header #score{
 #grid .number_cell{
     position: absolute;
 
-    font-size: 60px;
     font-weight: bold;
     text-align: center;
     line-height: 100px;

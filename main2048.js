@@ -1,9 +1,6 @@
-/**
- * Created by 帅 on 9/30.
- */
-
 var board = new Array();
 var score = 0;
+var step = 0;
 var hasConflicted = new Array();
 
 var startX = 0;
@@ -23,7 +20,6 @@ function prepareForMobile(){
         cellSideLength = 100;
         cellSpace = 20;
     }
-
 
     var grid = $("#grid");
     var gridCell = $(".grid_cell");
@@ -45,6 +41,8 @@ function newgame(){
     generateOneNumber();
     //分数清零
     score = 0;
+    //步数清零
+    step = 0;
 }
 
 function init(){
@@ -88,14 +86,16 @@ function updateBoardView(){
                 theNumberCell.css("left",getPosLeft(i,j));
                 theNumberCell.css("background-color",getNumberBackgroundColor(board[i][j]));
                 theNumberCell.css("color",getNumberColor(board[i][j]));
+                theNumberCell.css("font-size",getNumberFontSize(board[i][j]));
+                //theNumberCell.css("font-size","40px");
                 //theNumberCell.text(board[i][j]);
                 theNumberCell.text(getNumberText(board[i][j]));
+
             }
             hasConflicted[i][j] = false;
         }
     }
     $(".number_cell").css("line-height",cellSideLength + "px");
-    $(".number_cell").css("font-size",0.6 * cellSideLength + "px");
 }
 
 function generateOneNumber(){
@@ -278,6 +278,8 @@ function moveLeft(){
         }
     }
 
+    step++;
+    updateStep(step);
     setTimeout("updateBoardView()",200);
     return true;
 }
@@ -314,6 +316,9 @@ function moveUp(){
             }
         }
     }
+
+    step++;
+    updateStep(step);
     setTimeout("updateBoardView()",200);
     return true;
 }
@@ -350,6 +355,9 @@ function moveRight(){
             }
         }
     }
+
+    step++;
+    updateStep(step);
     setTimeout("updateBoardView()",200);
     return true;
 }
@@ -386,6 +394,9 @@ function moveDown(){
             }
         }
     }
+
+    step++;
+    updateStep(step);
     setTimeout("updateBoardView()",200);
     return true;
 }

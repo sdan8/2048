@@ -1,7 +1,3 @@
-/**
- * Created by ˧ on 9/30.
- */
-
 documentWidth = window.screen.availWidth;
 var gridWidth = 0.92 * documentWidth;
 var cellSideLength =    0.18 * documentWidth;
@@ -80,6 +76,27 @@ function getNumberText(number){
     }*/
 
     return "fuck";
+}
+
+function getNumberFontSize(number){
+
+    switch (number){
+        case 2: return 0.6 * cellSideLength + "px";break;
+        case 4: return 0.6 * cellSideLength + "px";break;
+        case 8: return 0.6 * cellSideLength + "px";break;
+        case 16: return 0.6 * cellSideLength + "px";break;
+        case 32: return 0.6 * cellSideLength + "px";break;
+        case 64: return 0.6 * cellSideLength + "px";break;
+        case 128: return 0.5 * cellSideLength + "px";break;
+        case 256: return 0.5 * cellSideLength + "px";break;
+        case 512: return 0.5 * cellSideLength + "px";break;
+        case 1024: return 0.35 * cellSideLength + "px";break;
+        case 2048: return 0.35 * cellSideLength + "px";break;
+        case 4096: return 0.35 * cellSideLength + "px";break;
+        case 8192: return 0.35 * cellSideLength + "px";break;
+        case 16384: return 0.3 * cellSideLength + "px";break;
+    }
+    return 0.3 * cellSideLength + "px";
 }
 
 function noSpace(board){

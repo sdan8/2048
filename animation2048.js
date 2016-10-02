@@ -1,11 +1,9 @@
-/**
- * Created by ˧ on 9/30.
- */
 function showNumberWithAnimation(x, y, randNumber){
     var numberCell = $("#number_cell_" + x + "_" + y);
 
     numberCell.css("background-color",getNumberBackgroundColor(randNumber));
     numberCell.css("color",getNumberColor(randNumber));
+    numberCell.css("font-size",getNumberFontSize(randNumber));
     numberCell.text(getNumberText(randNumber));
 
     numberCell.animate({
@@ -26,4 +24,8 @@ function showMoveAnimation(fromX, fromY, toX, toY){
 
 function updateScore(score){
     $("#score").text(score);
+}
+
+function updateStep(step){
+    $("#step").text(step);
 }
