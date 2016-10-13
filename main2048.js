@@ -9,10 +9,24 @@ var endX = 0;
 var endY = 0;
 
 $(document).ready(function () {
+    changeSize();
     prepareForMobile();
     //开始新的游戏
     newgame();
 });
+
+function changeSize(){
+    document.getElementById("auto").value = documentWidth;
+    document.getElementById("auto").innerHTML = documentWidth;
+    $("#size").change(function () {
+        documentWidth = $(this).val();
+        gridWidth = 0.92 * documentWidth;
+        cellSideLength =    0.18 * documentWidth;
+        cellSpace = 0.04 * documentWidth;
+        prepareForMobile();
+        init();
+    });
+}
 
 function prepareForMobile(){
     if(documentWidth > 500){

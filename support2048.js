@@ -1,4 +1,4 @@
-documentWidth = window.screen.availWidth;
+var documentWidth = window.screen.availWidth;
 var gridWidth = 0.92 * documentWidth;
 var cellSideLength =    0.18 * documentWidth;
 var cellSpace = 0.04 * documentWidth;

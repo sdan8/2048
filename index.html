@@ -9,12 +9,16 @@
     <script src="main2048.js" type="text/javascript"></script>
     <script src="animation2048.js" type="text/javascript"></script>
     <script src="support2048.js" type="text/javascript"></script>
-    <title>2048</title>
+    <title>2048|sdan8</title>
 </head>
 <body>
     <!-- header-->
     <header>
         <h1>2048</h1>
+        <select id="size">
+            <option id="auto" value=""></option>
+            <option value="320">320</option>
+        </select>
         <input id="newgame" type="button" value="New Game" onclick="newgame()"/>
         <p>score:<span id="score">0</span>&nbsp;&nbsp;step:<span id="step">0</span></p>
     </header>
